@@ -1,0 +1,114 @@
+//Auto Weapon Switch
+cl_autowepswitch "0"
+
+//Bobbing and Movement Shifting
+cl_viewmodel_shift_left_amt "0"
+cl_viewmodel_shift_right_amt "0"
+cl_bob_lower_amt "0"
+cl_bobamt_lat "0"
+cl_bobamt_vert "0"
+cl_showloadout "1"
+cl_bobcycle "1"
+viewmodel_offset_x "-3";
+viewmodel_offset_y "-3";
+viewmodel_offset_z "-3";
+
+//Bypass OS Interface & Acceleration - yes
+m_rawinput "1"
+m_mouseaccel1 "0"
+m_mouseaccel2 "0"
+
+//Crosshair
+cl_crosshairalpha "200"
+cl_crosshaircolor "1"
+cl_crosshaircolor_b "50"
+cl_crosshaircolor_r "50"
+cl_crosshaircolor_g "250"
+cl_crosshairdot "0"
+cl_crosshairgap "0"
+cl_crosshairsize "2"
+cl_crosshairstyle "4"
+cl_crosshairusealpha "1"
+cl_crosshairthickness "1"
+cl_fixedcrosshairgap "0"
+cl_crosshair_outlinethickness "1"
+cl_crosshair_drawoutline "1"
+
+// Lefty babby
+cl_righthand "0"
+
+//Deathcam
+cl_disablefreezecam "1"
+
+//Gun Tracers
+r_drawtracers_firstperson "0"
+
+//Help Messages
+gameinstructor_enable "0"
+cl_autohelp "0"
+cl_showhelp "0"
+
+//HUD
+hud_scaling ".95"
+hud_showtargetid "1"
+bind "TAB" "+ng"; //
+alias "+ng" "+showscores; net_graph 1" // these 3 = onyl show netgraph when tab/scoreboard is held
+alias "-ng" "-showscores; net_graph 0" //
+
+//Max Ping - adjust for preference
+mm_dedicated_search_maxping "100" // we dont wanna get put in a server where we have 200 ping
+
+//MOTD
+cl_disablehtmlmotd "1"
+cl_downloadfilter "nosounds"
+
+//Don't download shit
+cl_allowdownload 0 
+cl_downloadfilter none
+
+//Performance & Rates - rates for 128 tick servers, matchmaking is 64 but this is usually fine
+cl_forcepreload "1"
+//cl_interp "0"
+//cl_interp_ratio "2"
+//cl_cmdrate "128"
+//cl_updaterate "128"
+//rate "128000"
+
+//Radar - radar settings + adjustment on numpad enter
+cl_radar_rotate "0"
+cl_radar_always_centered "0"
+cl_radar_scale "0.32"
+cl_radar_icon_scale_min "0.5"
+bind "=" "incrementvar cl_radar_scale 0.32 0.52 0.05" // this lets you adjust radar scale
+
+//Sound
+//snd_setmixer Ambient vol 0.0
+
+// Binds
+bind "z" "slot6"
+bind "x" "slot8"
+bind "c" "slot7"
+bind "v" "slot10"
+bind "'" "toggle voice_enable 1 0" // Clutch Mode toggle
+bind MWHEELDOWN +jump
+bind "h" "toggle gameinstructor_enable" // Find the bomb bullshit
+
+// Jump Throw
+alias "+jumpthrow2" "+jump;-attack"
+alias "-jumpthrow2" "-jump"
+bind "j" "+jumpthrow2"
+// Run jump throw
+alias "+jumpthrow" "+forward;+jump;-attack"
+alias "-jumpthrow" "-jump;-forward"
+bind "k" "+jumpthrow"
+
+
+echo "Autoexec Config loaded"
+echo "Autoexec Config loaded"
+echo "Autoexec Config loaded"
+echo "Autoexec Config loaded"
+echo "Autoexec Config loaded"
+echo "Autoexec Config loaded"
+echo "Autoexec Config loaded"
+echo "Autoexec Config loaded"
+host_writeconfig
